@@ -9,7 +9,7 @@ function randomCard(){
 	var randomIndex = Math.floor(Math.random()*dictionaryLength);
 	if(randomIndex === dictionaryLength) randomIndex--;
 
-	flashcard.innerHTML = cardsDictionary[randomIndex].front;
+	flashcard.innerHTML = cardsDictionary[randomIndex].back;
 }
 
 randomCard();
