@@ -1,0 +1,22 @@
+body {
+	background-color: #5A4B3C;
+	text-align: center;
+}
+
+#container{
+	width: 900px;
+	margin: auto;
+}
+
+#flashcard{
+	width: 700px;
+	height: 400px;
+	background-color: white;
+	border: 5px solid white;
+	border-radius: 10px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 30pt;
+	/*padding: 15px;*/	
+}
