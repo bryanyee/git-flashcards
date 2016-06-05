@@ -27,7 +27,6 @@ function changeCard(direction){
 	flashcardDetail.innerHTML = cardsDictionary[cardIndex].back;
 	cardSide = "back";
 	setTopValue();
-
 }
 
 //Vertically centers the text in the flashcard
@@ -46,4 +45,6 @@ function flipCard(){
 		flashcardDetail.innerHTML = cardsDictionary[cardIndex].back;
 		cardSide = "back";
 	}
+
+	setTopValue();
 }
