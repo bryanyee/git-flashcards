@@ -7,15 +7,27 @@ var 	cardsDictionary = [ {front: "git config --global user.name \"Bryan Yee\"", 
 		flashcardDetail = document.getElementById('flashcardDetail');
 
 
-randomCard();
+changeCard(0);
 
-//Displays a random flashcard
-function randomCard(){
-	cardIndex = Math.floor(Math.random()*dictionaryLength);
-	if(cardIndex === dictionaryLength) cardIndex--;
+//Changes the displayed flashcard
+function changeCard(direction){
+	if (direction === -1){		//changes to the previous index in the dictionary
+		cardIndex--;
+		if (cardIndex < 0) cardIndex = dictionaryLength - 1;
+	}
+	else if (direction === 1){		//changes to the next index in the dictionary
+		cardIndex++;
+		if (cardIndex >= dictionaryLength) cardIndex = 0;
+	}
+	else {		//selects a random index in the dictionary
+		cardIndex = Math.floor(Math.random()*dictionaryLength);
+		if(cardIndex === dictionaryLength) cardIndex--;
+	}
 
 	flashcardDetail.innerHTML = cardsDictionary[cardIndex].back;
+	cardSide = "back";
 	setTopValue();
+
 }
 
 //Vertically centers the text in the flashcard
