@@ -10,13 +10,16 @@ body {
 
 #flashcard{
 	width: 700px;
-	height: 400px;
+	min-height: 400px;
 	background-color: white;
 	border: 5px solid white;
 	border-radius: 10px;
 	margin: auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	font-size: 30pt;
-	/*padding: 15px;*/	
+}
+
+#flashcardDetail{
+	position: relative;
+	font-size: 20pt;
 }
