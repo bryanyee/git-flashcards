@@ -1,10 +1,11 @@
-var 	cardsDictionary = [ {front: "git config --global user.name \"Bryan Yee\"", back: "configures the username"},
-							{front: "git config --global user.email \"yee.bryan.c@gmail.com\"", back: "configures the email address"},
+var 	cardsDictionary = [ {front: "git config --global user.name \"name\"", back: "configures the username"},
+							{front: "git config --global user.email \"email address\"", back: "configures the email address"},
 							{front: "git init projectname", back: "initializes a project repository"} ],
 		dictionaryLength = cardsDictionary.length,
 		cardSide = "back",
 		cardIndex = undefined,
-		flashcardDetail = document.getElementById('flashcardDetail');
+		flashcardDetail = document.getElementById('flashcardDetail'),
+		leftFooter = document.getElementById('leftFooter');
 
 
 changeCard(0);
@@ -26,6 +27,7 @@ function changeCard(direction){
 
 	flashcardDetail.innerHTML = cardsDictionary[cardIndex].back;
 	cardSide = "back";
+	leftFooter.innerHTML = "back";
 	setTopValue();
 }
 
@@ -39,10 +41,12 @@ function setTopValue(){
 function flipCard(){
 	if(cardSide === "back"){
 		flashcardDetail.innerHTML = cardsDictionary[cardIndex].front;
+		leftFooter.innerHTML = "front";
 		cardSide = "front";
 	}
 	else { 
 		flashcardDetail.innerHTML = cardsDictionary[cardIndex].back;
+		leftFooter.innerHTML = "back";
 		cardSide = "back";
 	}
 

@@ -19,11 +19,20 @@ h1 {
 	border: 5px solid white;
 	border-radius: 10px;
 	margin: auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+	position: relative;
 }
 
 #flashcardDetail{
 	position: relative;
 	font-size: 20pt;
+}
+
+#leftFooter{
+	padding: 5px;
+	font-size: 15pt;
+	font-style: italic;
+	float: left;
+	position: absolute;
+	bottom: 0px;
 }
