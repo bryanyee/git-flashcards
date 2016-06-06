@@ -8,6 +8,7 @@ var 	cardsDictionary = [ {front: "git config --global user.name &#60;name&#62;",
 		cardSide = "back",
 		cardIndex = undefined,
 		flashcardDetail = document.getElementById('flashcardDetail'),
+		flashcard = document.getElementById('flashcard'),
 		leftFooter = document.getElementById('leftFooter');
 
 
@@ -31,6 +32,7 @@ function changeCard(direction){
 	flashcardDetail.innerHTML = cardsDictionary[cardIndex].back;
 	cardSide = "back";
 	leftFooter.innerHTML = "back";
+	flashcard.style.backgroundColor = "#e2dfd9";
 	setTopValue();
 }
 
@@ -46,11 +48,13 @@ function flipCard(){
 		flashcardDetail.innerHTML = cardsDictionary[cardIndex].front;
 		leftFooter.innerHTML = "front";
 		cardSide = "front";
+		flashcard.style.backgroundColor = "white";
 	}
 	else { 
 		flashcardDetail.innerHTML = cardsDictionary[cardIndex].back;
 		leftFooter.innerHTML = "back";
 		cardSide = "back";
+		flashcard.style.backgroundColor = "#e2dfd9";
 	}
 
 	setTopValue();
