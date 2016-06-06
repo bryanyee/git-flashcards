@@ -29,10 +29,25 @@ function changeCard(direction){
 		if(cardIndex === dictionaryLength) cardIndex--;
 	}
 
-	flashcardDetail.innerHTML = cardsDictionary[cardIndex].back;
-	cardSide = "back";
-	leftFooter.innerHTML = "back";
-	flashcard.style.backgroundColor = "#e2dfd9";
+	cardSide = "front";
+	flipCard();
+}
+
+//Displays the other side of the flashcard
+function flipCard(){
+	if(cardSide === "back"){
+		flashcardDetail.innerHTML = cardsDictionary[cardIndex].front;
+		flashcard.style.backgroundColor = "white";
+		leftFooter.innerHTML = "front";
+		cardSide = "front";
+	}
+	else { 
+		flashcardDetail.innerHTML = cardsDictionary[cardIndex].back;
+		flashcard.style.backgroundColor = "#e2dfd9";
+		leftFooter.innerHTML = "back";
+		cardSide = "back";
+	}
+
 	setTopValue();
 }
 
@@ -40,22 +55,4 @@ function changeCard(direction){
 function setTopValue(){
 	var flashcardDetailHeight = flashcardDetail.clientHeight;
 	flashcardDetail.style.top = ((400 - flashcardDetailHeight) / 2).toString() + "px";
-}
-
-//Displays the other side of the flashcard
-function flipCard(){
-	if(cardSide === "back"){
-		flashcardDetail.innerHTML = cardsDictionary[cardIndex].front;
-		leftFooter.innerHTML = "front";
-		cardSide = "front";
-		flashcard.style.backgroundColor = "white";
-	}
-	else { 
-		flashcardDetail.innerHTML = cardsDictionary[cardIndex].back;
-		leftFooter.innerHTML = "back";
-		cardSide = "back";
-		flashcard.style.backgroundColor = "#e2dfd9";
-	}
-
-	setTopValue();
 }
